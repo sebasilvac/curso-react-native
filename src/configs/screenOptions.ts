@@ -1,7 +1,7 @@
-import { StackNavigationOptions } from "@react-navigation/stack";
+import { StackNavigationOptions } from '@react-navigation/stack';
 
 const screenOptions: StackNavigationOptions = {
-  headerShown: true, // default
+  headerShown: false, // default
   headerTitleAlign: 'center',
   // title: 'OtherTitle',
   // headerStyle: {
@@ -10,7 +10,7 @@ const screenOptions: StackNavigationOptions = {
   // headerTintColor: '#fff',
   // presentation: 'transparentModal',
   // presentation: 'modal',
-  presentation: 'card',
+  //presentation: 'card',
   //gestureEnabled: false,
   keyboardHandlingEnabled: true,
 };
