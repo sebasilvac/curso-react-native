@@ -14,12 +14,38 @@ import { Animated } from '../components/Animated';
 import ReAnimated from '../components/Reanimated/Reanimated';
 import { globalStyles } from '../styles';
 import { useNavigation } from '@react-navigation/native';
+import { useDrawerStatus } from '@react-navigation/drawer';
 
-export default function Home() {
-  const navigation = useNavigation();
+export default function Home({ navigation }: any) {
+  //const navigation = useNavigation();
+  const isDraweOpen = useDrawerStatus();
 
   return (
     <SafeAreaView style={[globalStyles.screenContainer, styles.container]}>
+      <View style={{ height: 50, marginTop: 50 }}>
+        {isDraweOpen === 'open' ? (
+          <Text style={styles.title}>Drawer opened</Text>
+        ) : (
+          <Text style={styles.title}>Drawer closed</Text>
+        )}
+      </View>
+
+      <Button
+        onPress={() => {
+          navigation.toggleDrawer();
+        }}
+      >
+        <Text>Toggle Drawer</Text>
+      </Button>
+
+      <Button
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+      >
+        <Text>Open Drawer</Text>
+      </Button>
+
       <Button
         onPress={() => {
           navigation.navigate('Settings' as never);

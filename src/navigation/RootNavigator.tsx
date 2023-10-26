@@ -1,11 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import HomeStack from "./HomeStack";
+import MyDrawer from './Drawer';
 
 
 const RootNavigator = () => {
   return (
     <NavigationContainer>
-      <HomeStack />
+      {/* <HomeStack /> */}
+      <MyDrawer />
     </NavigationContainer>
   );
 }
